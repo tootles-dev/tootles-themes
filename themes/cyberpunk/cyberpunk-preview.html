@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Theme Preview</title>
+    <link rel="stylesheet" href="cyberpunk.css">
+    <style>
+        .preview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .preview-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            border: 1px solid var(--border-color, #ddd);
+            border-radius: 8px;
+        }
+        .preview-section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--accent-primary, #007bff);
+            padding-bottom: 0.5rem;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .theme-info {
+            background: var(--bg-secondary, #f8f9fa);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .color-swatch {
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="dark-mode-toggle">
+        <button onclick="toggleDarkMode()" class="btn btn-secondary">
+            🌓 Toggle Dark Mode
+        </button>
+    </div>
+
+    <div class="preview-container">
+        <header>
+            <h1>Cyberpunk Theme Preview</h1>
+            <div class="theme-info">
+                <p><strong>Theme:</strong> Cyberpunk</p>
+                <p><strong>CSS File:</strong> cyberpunk.css</p>
+                <p><strong>Generated:</strong> <span id="generated-date"></span></p>
+                <p>This preview demonstrates how the theme styles various UI components and content types.</p>
+            </div>
+        </header>
+
+        
+        <section class="preview-section">
+            <h2>Typography</h2>
+            
+            <h1>Heading 1 - Main Title</h1>
+            <h2>Heading 2 - Section Title</h2>
+            <h3>Heading 3 - Subsection</h3>
+            <h4>Heading 4 - Minor Heading</h4>
+            <h5>Heading 5 - Small Heading</h5>
+            <h6>Heading 6 - Smallest Heading</h6>
+            
+            <p>This is a regular paragraph with <strong>bold text</strong>, <em>italic text</em>, 
+            and <a href="#">a sample link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <blockquote>
+                This is a blockquote. It's used for highlighting important quotes or 
+                excerpts from other sources.
+            </blockquote>
+            
+            <ul>
+                <li>Unordered list item 1</li>
+                <li>Unordered list item 2</li>
+                <li>Unordered list item 3</li>
+            </ul>
+            
+            <ol>
+                <li>Ordered list item 1</li>
+                <li>Ordered list item 2</li>
+                <li>Ordered list item 3</li>
+            </ol>
+        
+        </section>
+
+        <section class="preview-section">
+            <h2>Buttons</h2>
+            
+            <div class="component-grid">
+                <div>
+                    <h4>Primary Buttons</h4>
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-primary" disabled>Disabled Primary</button>
+                </div>
+                <div>
+                    <h4>Secondary Buttons</h4>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-secondary" disabled>Disabled Secondary</button>
+                </div>
+                <div>
+                    <h4>Outline Buttons</h4>
+                    <button class="btn btn-outline">Outline Button</button>
+                    <button class="btn btn-outline" disabled>Disabled Outline</button>
+                </div>
+                <div>
+                    <h4>Button Sizes</h4>
+                    <button class="btn btn-primary btn-sm">Small</button>
+                    <button class="btn btn-primary">Regular</button>
+                    <button class="btn btn-primary btn-lg">Large</button>
+                </div>
+            </div>
+        
+        </section>
+
+        <section class="preview-section">
+            <h2>Forms</h2>
+            
+            <form>
+                <div style="margin-bottom: 1rem;">
+                    <label for="text-input">Text Input:</label>
+                    <input type="text" id="text-input" class="form-control" placeholder="Enter text here">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="email-input">Email Input:</label>
+                    <input type="email" id="email-input" class="form-control" placeholder="user@example.com">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="password-input">Password Input:</label>
+                    <input type="password" id="password-input" class="form-control" placeholder="Password">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="select-input">Select Dropdown:</label>
+                    <select id="select-input" class="form-control">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="textarea-input">Textarea:</label>
+                    <textarea id="textarea-input" class="form-control" rows="4" 
+                              placeholder="Enter multiple lines of text here..."></textarea>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label>
+                        <input type="checkbox"> Checkbox option
+                    </label>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label>
+                        <input type="radio" name="radio-group"> Radio option 1
+                    </label>
+                    <label>
+                        <input type="radio" name="radio-group"> Radio option 2
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit Form</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+        
+        </section>
+
+        <section class="preview-section">
+            <h2>Tables</h2>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>Administrator</td>
+                        <td><span class="text-success">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane@example.com</td>
+                        <td>Editor</td>
+                        <td><span class="text-warning">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Bob Johnson</td>
+                        <td>bob@example.com</td>
+                        <td>Viewer</td>
+                        <td><span class="text-danger">Inactive</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        
+        </section>
+
+        <section class="preview-section">
+            <h2>Cards</h2>
+            
+            <div class="component-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Card Title</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>This is a basic card with header, body, and footer sections.</p>
+                        <button class="btn btn-primary">Action</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Simple Card</h4>
+                        <p>This card only has a body section with some content and actions.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+
+        <section class="preview-section">
+            <h2>Alerts</h2>
+            
+            <div class="alert alert-success">
+                <strong>Success!</strong> This is a success alert message.
+            </div>
+            
+            <div class="alert alert-info">
+                <strong>Info:</strong> This is an informational alert message.
+            </div>
+            
+            <div class="alert alert-warning">
+                <strong>Warning!</strong> This is a warning alert message.
+            </div>
+            
+            <div class="alert alert-danger">
+                <strong>Error!</strong> This is an error alert message.
+            </div>
+        
+        </section>
+
+        <section class="preview-section">
+            <h2>Code</h2>
+            
+            <p>Inline code example: <code>const variable = 'value';</code></p>
+            
+            <h4>Code Block Example:</h4>
+            <pre><code>function greetUser(name) {
+    if (!name) {
+        throw new Error('Name is required');
+    }
+    
+    return `Hello, ${name}! Welcome to the application.`;
+}
+
+// Usage example
+try {
+    const greeting = greetUser('Alice');
+    console.log(greeting);
+} catch (error) {
+    console.error('Error:', error.message);
+}</code></pre>
+        
+        </section>
+
+        <section class="preview-section">
+            <h2>Navigation</h2>
+            
+            <nav style="margin-bottom: 2rem;">
+                <ul style="list-style: none; padding: 0; display: flex; gap: 1rem;">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div style="margin: 2rem 0;">
+                <h4>Breadcrumb Navigation:</h4>
+                <nav>
+                    <a href="#">Home</a> &gt; 
+                    <a href="#">Category</a> &gt; 
+                    <span>Current Page</span>
+                </nav>
+            </div>
+        
+        </section>
+    </div>
+
+    <script>
+        // Set generated date
+        document.getElementById('generated-date').textContent = new Date().toLocaleString();
+        
+        // Dark mode toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+</html>

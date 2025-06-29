@@ -1,0 +1,401 @@
+/* Cyberpunk Theme - Copyright Jascha Wanger 2025 */
+
+:root {
+  /* Required Variables for Tootles Compatibility */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --accent-primary: #00ffff;
+  --accent-secondary: #ff00ff;
+  --border-color: #00ffff;
+  --border-focus: #ff00ff;
+  --color-success: #00ff41;
+  --color-warning: #ffff00;
+  --color-error: #ff073a;
+  --font-family-primary: 'Courier New', 'Monaco', 'Menlo', monospace;
+  --font-family-mono: 'Courier New', 'Monaco', 'Menlo', monospace;
+  
+  /* Cyberpunk-Specific Colors */
+  --cyberpunk-bg-primary: #0a0a0a;
+  --cyberpunk-bg-secondary: #1a1a2e;
+  --cyberpunk-bg-tertiary: #16213e;
+  
+  /* Neon Colors */
+  --cyberpunk-cyan: #00ffff;
+  --cyberpunk-magenta: #ff00ff;
+  --cyberpunk-green: #00ff41;
+  --cyberpunk-yellow: #ffff00;
+  --cyberpunk-red: #ff073a;
+  
+  /* Text Colors */
+  --cyberpunk-text-primary: #ffffff;
+  --cyberpunk-text-secondary: #b0b0b0;
+  --cyberpunk-text-accent: var(--cyberpunk-cyan);
+  
+  /* Glow Effects */
+  --cyberpunk-glow-cyan: 0 0 10px var(--cyberpunk-cyan), 0 0 20px var(--cyberpunk-cyan), 0 0 30px var(--cyberpunk-cyan);
+  --cyberpunk-glow-magenta: 0 0 10px var(--cyberpunk-magenta), 0 0 20px var(--cyberpunk-magenta), 0 0 30px var(--cyberpunk-magenta);
+  --cyberpunk-glow-green: 0 0 10px var(--cyberpunk-green), 0 0 20px var(--cyberpunk-green), 0 0 30px var(--cyberpunk-green);
+  
+  /* Fonts */
+  --cyberpunk-font-primary: 'Courier New', 'Monaco', 'Menlo', monospace;
+  --cyberpunk-font-secondary: 'Arial', 'Helvetica', sans-serif;
+}
+
+/* Base Styles */
+body {
+  background: var(--cyberpunk-bg-primary);
+  color: var(--cyberpunk-text-primary);
+  font-family: var(--cyberpunk-font-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%),
+    linear-gradient(-45deg, transparent 24%, rgba(255, 0, 255, 0.05) 25%, rgba(255, 0, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, 0.05) 75%, rgba(255, 0, 255, 0.05) 76%, transparent 77%);
+  background-size: 50px 50px;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cyberpunk-cyan);
+  text-shadow: var(--cyberpunk-glow-cyan);
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 2.5em;
+  border-bottom: 2px solid var(--cyberpunk-cyan);
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--cyberpunk-magenta);
+  text-shadow: var(--cyberpunk-glow-magenta);
+}
+
+h3 {
+  font-size: 1.5em;
+  color: var(--cyberpunk-green);
+  text-shadow: var(--cyberpunk-glow-green);
+}
+
+/* Links */
+a {
+  color: var(--cyberpunk-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--cyberpunk-magenta);
+  text-shadow: var(--cyberpunk-glow-magenta);
+}
+
+a:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--cyberpunk-cyan), var(--cyberpunk-magenta));
+  transition: width 0.3s ease;
+}
+
+a:hover:before {
+  width: 100%;
+}
+
+/* Buttons */
+button, .button {
+  background: linear-gradient(45deg, var(--cyberpunk-bg-secondary), var(--cyberpunk-bg-tertiary));
+  border: 2px solid var(--cyberpunk-cyan);
+  color: var(--cyberpunk-text-primary);
+  padding: 12px 24px;
+  font-family: var(--cyberpunk-font-primary);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover, .button:hover {
+  border-color: var(--cyberpunk-magenta);
+  box-shadow: var(--cyberpunk-glow-magenta);
+  transform: translateY(-2px);
+}
+
+button:active, .button:active {
+  transform: translateY(0);
+}
+
+button:before, .button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+button:hover:before, .button:hover:before {
+  left: 100%;
+}
+
+/* Input Fields */
+input, textarea, select {
+  background: var(--cyberpunk-bg-secondary);
+  border: 2px solid var(--cyberpunk-cyan);
+  color: var(--cyberpunk-text-primary);
+  padding: 10px;
+  font-family: var(--cyberpunk-font-primary);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--cyberpunk-magenta);
+  box-shadow: var(--cyberpunk-glow-magenta);
+  background: var(--cyberpunk-bg-tertiary);
+}
+
+/* Code Blocks */
+code, pre {
+  background: var(--cyberpunk-bg-secondary);
+  border: 1px solid var(--cyberpunk-green);
+  color: var(--cyberpunk-green);
+  font-family: var(--cyberpunk-font-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 16px;
+  overflow-x: auto;
+  position: relative;
+}
+
+pre:before {
+  content: '> ';
+  color: var(--cyberpunk-cyan);
+  font-weight: bold;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+th, td {
+  border: 1px solid var(--cyberpunk-cyan);
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: var(--cyberpunk-bg-secondary);
+  color: var(--cyberpunk-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background: rgba(0, 255, 255, 0.05);
+}
+
+tr:hover {
+  background: rgba(255, 0, 255, 0.1);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+  position: relative;
+}
+
+ul li:before {
+  content: '▶';
+  color: var(--cyberpunk-cyan);
+  position: absolute;
+  left: -1.5em;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--cyberpunk-magenta);
+  background: var(--cyberpunk-bg-secondary);
+  padding: 16px;
+  margin: 1em 0;
+  position: relative;
+}
+
+blockquote:before {
+  content: '"';
+  font-size: 4em;
+  color: var(--cyberpunk-magenta);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  opacity: 0.3;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.panel {
+  background: var(--cyberpunk-bg-secondary);
+  border: 2px solid var(--cyberpunk-cyan);
+  padding: 20px;
+  margin: 1em 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyberpunk-cyan), var(--cyberpunk-magenta), var(--cyberpunk-green));
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Status Indicators */
+.status-online {
+  color: var(--cyberpunk-green);
+  text-shadow: var(--cyberpunk-glow-green);
+}
+
+.status-warning {
+  color: var(--cyberpunk-yellow);
+  text-shadow: 0 0 10px var(--cyberpunk-yellow);
+}
+
+.status-error {
+  color: var(--cyberpunk-red);
+  text-shadow: 0 0 10px var(--cyberpunk-red);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cyberpunk-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--cyberpunk-cyan), var(--cyberpunk-magenta));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--cyberpunk-magenta), var(--cyberpunk-green));
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.flicker {
+  animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  button, .button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Terminal-like Elements */
+.terminal {
+  background: var(--cyberpunk-bg-primary);
+  border: 2px solid var(--cyberpunk-green);
+  color: var(--cyberpunk-green);
+  font-family: var(--cyberpunk-font-primary);
+  padding: 20px;
+  margin: 1em 0;
+  position: relative;
+}
+
+.terminal:before {
+  content: 'TERMINAL v2.1.0 - SECURE CONNECTION ESTABLISHED';
+  position: absolute;
+  top: -2px;
+  left: 10px;
+  background: var(--cyberpunk-bg-primary);
+  padding: 0 10px;
+  font-size: 10px;
+  color: var(--cyberpunk-green);
+  text-transform: uppercase;
+}
+
+.terminal-prompt:before {
+  content: 'user@cyberpunk:~$ ';
+  color: var(--cyberpunk-cyan);
+}
